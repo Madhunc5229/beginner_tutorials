@@ -1,0 +1,6 @@
+Done processing ./app/publisher.cpp
+Done processing ./app/subscriber.cpp
+Done processing ./include/pub_sub/listener.h
+Done processing ./include/pub_sub/talker.h
+Done processing ./src/listener.cpp
+Done processing ./src/talker.cpp
