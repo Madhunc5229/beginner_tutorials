@@ -15,7 +15,7 @@
 
 ## Building the package
 
-- source the ROS2 setup bash.
+### source the ROS2 setup bash.
 ```
 source /opt/ros/humble/setup.bash
 ```
@@ -27,24 +27,24 @@ git clone https://github.com/Madhunc5229/beginner_tutorials.git
 ```
 
 
-### Build the package using colcon.
+### Build the package using colcon
 ```
 cd ..
 colcon build --packages-select pub_sub
 ```
 
-### Source the package after building.
+### Source the package after building
 ```
 source install/setup.bash
 ```
 
 ## Running the publisher
-- Open a new terminal, source both ros2 and the package. Then type the following command.
+- Open a new terminal, source both ros2 and the package. Then type the following command
 ```
 ros2 run pub_sub publisher
 ```
 ## Running the subscriber
-- Open a new terminal, source both ros2 and the package. Then type the following command..
+- Open a new terminal, source both ros2 and the package. Then type the following command
 ```
 ros2 run pub_sub subscriber
 ```
