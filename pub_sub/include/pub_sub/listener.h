@@ -13,7 +13,7 @@
 #define  PUB_SUB_INCLUDE_PUB_SUB_LISTENER_H_
 
 #include <string>
-
+#include "tutorial_interfaces/msg/num.hpp" 
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
@@ -36,9 +36,9 @@ class Listener : public rclcpp::Node {
    *
    * @param msg The message that is read from the topic.
    */
-  void topic_callback(const std_msgs::msg::String &msg) const;
+  void topic_callback(const tutorial_interfaces::msg::Num &msg) const;
 
-  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr
+  rclcpp::Subscription<tutorial_interfaces::msg::Num>::SharedPtr
       subscription_;  //!< The pointer that subscribes to the topic.
 };                    // Listener
 

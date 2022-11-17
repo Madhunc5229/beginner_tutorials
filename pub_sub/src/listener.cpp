@@ -10,13 +10,14 @@
  */
 #include "../include/pub_sub/listener.h"
 
+
 Listener::Listener(const std::string &node_name, std::string topic_name)
     : Node(node_name) {
-  subscription_ = this->create_subscription<std_msgs::msg::String>(
+  subscription_ = this->create_subscription<tutorial_interfaces::msg::Num>(
       topic_name, 10,
       std::bind(&Listener::topic_callback, this, std::placeholders::_1));
 }
 
-void Listener::topic_callback(const std_msgs::msg::String &msg) const {
-  RCLCPP_INFO(this->get_logger(), "I heard: '%s'", msg.data.c_str());
+void Listener::topic_callback(const tutorial_interfaces::msg::Num &msg) const {
+  RCLCPP_INFO_STREAM(this->get_logger(), "I heard: '" << msg.num << "'");
 }

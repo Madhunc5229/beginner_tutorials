@@ -16,6 +16,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
+#include "tutorial_interfaces/msg/num.hpp"
 
 class Talker : public rclcpp::Node {
  public:
@@ -33,7 +34,7 @@ class Talker : public rclcpp::Node {
  private:
   rclcpp::TimerBase::SharedPtr
       timer_;  //!< The pointer that points to the callback.
-  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr
+  rclcpp::Publisher<tutorial_interfaces::msg::Num>::SharedPtr
       publisher_;  //!< The pointer to the publisher topic.
 
   /**
