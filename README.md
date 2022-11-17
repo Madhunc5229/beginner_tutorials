@@ -1,7 +1,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-# beginner_tutorials
+# beginner_tutorials  
   
-## This repository contains simple ROS2 publisher and subscriber code written in C++.
+## This repository contains simple ROS2 publisher and subscriber code written in C++  
 
 ## Dependencies
 
