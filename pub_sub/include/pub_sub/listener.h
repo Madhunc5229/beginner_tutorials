@@ -17,6 +17,10 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
+/**
+ * @brief this class contains methods & attributes of a subscriber
+ * 
+ */
 class Listener : public rclcpp::Node {
  public:
   /**

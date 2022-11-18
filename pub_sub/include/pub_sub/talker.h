@@ -19,6 +19,10 @@
 #include "pub_sub/msg/string.hpp"
 #include "pub_sub/srv/add_two_strings.hpp"
 
+/**
+ * @brief this class contains methods & attributes for the publisher
+ * 
+ */
 class Talker : public rclcpp::Node {
  public:
   /**

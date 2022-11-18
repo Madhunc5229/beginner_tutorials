@@ -15,7 +15,9 @@
 Talker::Talker(const std::string &node_name, std::string topic_name,
                int interval)
     : Node(node_name) {
-  
+  if (rcutils_logging_set_logger_level(this->get_name(), RCUTILS_LOG_SEVERITY::RCUTILS_LOG_SEVERITY_DEBUG) == RCUTILS_RET_OK) RCLCPP_DEBUG(this->get_logger(), "Started with DEBUG");
+  else RCLCPP_INFO(this->get_logger(), "Started without DEBUG");
+
   //using RCLCPP_FATAL_STREAM to inform about the interval
   if (interval<1){
     RCLCPP_FATAL_STREAM(rclcpp::get_logger("rclcpp"), "Publishing interval is too small!");
