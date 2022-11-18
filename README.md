@@ -52,4 +52,4 @@ ros2 service call /add_two_strings pub_sub/srv/AddTwoStrings "{text1: "hello", t
 source install/setup.bash
 ros2 run rqt_console rqt_console
 ```
-<img src="rqt_log_level.png" width="500" alt="Alt text" title="">
+<img src="rqt_log_level.png" width="800" alt="Alt text" title="">
