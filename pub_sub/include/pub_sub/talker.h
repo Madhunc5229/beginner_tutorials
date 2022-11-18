@@ -17,6 +17,8 @@
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 #include "tutorial_interfaces/msg/num.hpp"
+#include "pub_sub/msg/string.hpp"
+#include "pub_sub/srv/add_two_strings.hpp"
 
 class Talker : public rclcpp::Node {
  public:
@@ -32,10 +34,11 @@ class Talker : public rclcpp::Node {
          std::string topic_name, int interval);
 
  private:
-  rclcpp::TimerBase::SharedPtr
-      timer_;  //!< The pointer that points to the callback.
-  rclcpp::Publisher<tutorial_interfaces::msg::Num>::SharedPtr
-      publisher_;  //!< The pointer to the publisher topic.
+  rclcpp::TimerBase::SharedPtr timer_;  //!< The pointer that points to the callback.
+  rclcpp::Publisher<pub_sub::msg::String>::SharedPtr publisher_;  //!< The pointer to the publisher topic.
+  rclcpp::Service<pub_sub::srv::AddTwoStrings>::SharedPtr service_; //!< The pointer to the service.
+  pub_sub::msg::String message_;
+  
 
   /**
    * @brief The callback funtion that prints and publishes a message in the
@@ -43,6 +46,8 @@ class Talker : public rclcpp::Node {
    *
    */
   void timer_callback();
+  void addStrings(const std::shared_ptr<pub_sub::srv::AddTwoStrings::Request> request, std::shared_ptr<pub_sub::srv::AddTwoStrings::Response> response);
+
 };  // Talker
 
 #endif  // PUB_SUB_INCLUDE_PUB_SUB_TALKER_H_

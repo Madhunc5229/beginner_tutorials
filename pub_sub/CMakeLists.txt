@@ -18,7 +18,7 @@ find_package(rosidl_default_generators REQUIRED)
 find_package(tutorial_interfaces REQUIRED) 
 
 set(msg_files
-  "msg/Strings.msg"
+  "msg/String.msg"
 )
 set(srv_files
   "srv/AddTwoStrings.srv"
@@ -44,6 +44,11 @@ ament_target_dependencies(subscriber rclcpp std_msgs tutorial_interfaces)
 install(TARGETS
 subscriber
 DESTINATION lib/${PROJECT_NAME})
+
+rosidl_get_typesupport_target(cpp_typesupport_target
+  ${PROJECT_NAME} "rosidl_typesupport_cpp")
+
+target_link_libraries(publisher "${cpp_typesupport_target}")
 
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()
