@@ -16,7 +16,6 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-#include "tutorial_interfaces/msg/num.hpp"
 #include "pub_sub/msg/string.hpp"
 #include "pub_sub/srv/add_two_strings.hpp"
 
@@ -46,6 +45,12 @@ class Talker : public rclcpp::Node {
    *
    */
   void timer_callback();
+  /**
+   * @brief this function is called when service call is made
+   * 
+   * @param request input parameters to process the call
+   * @param response output of the service call
+   */
   void addStrings(const std::shared_ptr<pub_sub::srv::AddTwoStrings::Request> request, std::shared_ptr<pub_sub::srv::AddTwoStrings::Response> response);
 
 };  // Talker

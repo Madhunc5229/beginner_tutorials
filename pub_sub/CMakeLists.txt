@@ -49,6 +49,7 @@ rosidl_get_typesupport_target(cpp_typesupport_target
   ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
 target_link_libraries(publisher "${cpp_typesupport_target}")
+target_link_libraries(subscriber "${cpp_typesupport_target}")
 
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()
