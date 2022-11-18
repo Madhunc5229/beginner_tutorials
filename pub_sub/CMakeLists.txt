@@ -14,11 +14,23 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(rosidl_default_generators REQUIRED)
+
+set(msg_files
+  "msg/String.msg"
+)
+set(srv_files
+  "srv/AddTwoStrings.srv"
+  )
+rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
+  ${srv_files}
+)
 
 #Talker
 include_directories(include/pub_sub)
 add_executable(publisher app/publisher.cpp src/talker.cpp)
-ament_target_dependencies(publisher rclcpp std_msgs)
+ament_target_dependencies(publisher rclcpp std_msgs )
 
 install(TARGETS
 publisher
@@ -26,10 +38,22 @@ DESTINATION lib/${PROJECT_NAME})
 
 #Listener 
 add_executable(subscriber app/subscriber.cpp src/listener.cpp)
-ament_target_dependencies(subscriber rclcpp std_msgs)
+ament_target_dependencies(subscriber rclcpp std_msgs )
 
 install(TARGETS
 subscriber
 DESTINATION lib/${PROJECT_NAME})
 
+rosidl_get_typesupport_target(cpp_typesupport_target
+  ${PROJECT_NAME} "rosidl_typesupport_cpp")
+
+target_link_libraries(publisher "${cpp_typesupport_target}")
+target_link_libraries(subscriber "${cpp_typesupport_target}")
+
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+ament_export_dependencies(rosidl_default_runtime)
 ament_package()

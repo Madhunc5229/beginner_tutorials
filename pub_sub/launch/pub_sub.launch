@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="pub_sub" exec="publisher" name="pub" args="$(var interval)" />
+  <node pkg="pub_sub" exec="subscriber" name="sub"/>
+</launch>
