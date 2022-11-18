@@ -4,9 +4,9 @@
  * @brief main file to start the subscriber
  * @version 0.1
  * @date 2022-11-17
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 #include <memory>
 

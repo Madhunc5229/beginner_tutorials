@@ -1,25 +1,26 @@
 /**
  * @file listener.h
  * @author Madhu Narra Chittibabu (mnarrach@umd.edu)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2022-11-17
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
-#ifndef  PUB_SUB_INCLUDE_PUB_SUB_LISTENER_H_
-#define  PUB_SUB_INCLUDE_PUB_SUB_LISTENER_H_
-
+#ifndef PUB_SUB_INCLUDE_PUB_SUB_LISTENER_H_
+#define PUB_SUB_INCLUDE_PUB_SUB_LISTENER_H_
 #include <string>
-#include "pub_sub/msg/string.hpp"
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
 
+
+#include "pub_sub/msg/string.hpp"
+
 /**
  * @brief this class contains methods & attributes of a subscriber
- * 
+ *
  */
 class Listener : public rclcpp::Node {
  public:
@@ -31,8 +32,7 @@ class Listener : public rclcpp::Node {
    * transported.
    *
    */
-  Listener(const std::string &node_name,
-           std::string topic_name);
+  Listener(const std::string &node_name, std::string topic_name);
 
  private:
   /**
