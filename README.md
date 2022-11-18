@@ -36,7 +36,7 @@ source install/setup.bash
 ## Launching the package
 - Launch the nodes with interval parameter which is publishing rate for the publisher node
 ```
-ros2 launch pub_sub pub_sub_launch interval:=1
+ros2 launch pub_sub pub_sub.launch interval:=1
 ```
 ## Service Call
 - Open a new terminal, source both ros2 and the package. Then type the following command
