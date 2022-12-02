@@ -19,6 +19,9 @@
 
 #include "pub_sub/msg/string.hpp"
 #include "pub_sub/srv/add_two_strings.hpp"
+#include "geometry_msgs/msg/transform_stamped.hpp"
+#include "tf2/LinearMath/Quaternion.h"
+#include "tf2_ros/static_transform_broadcaster.h"
 
 /**
  * @brief this class contains methods & attributes for the publisher
@@ -45,6 +48,8 @@ class Talker : public rclcpp::Node {
       service_;  //!< The pointer to the service.
   pub_sub::msg::String message_;
 
+  std::shared_ptr<tf2_ros::StaticTransformBroadcaster> tf_static_broadcaster_;
+
   /**
    * @brief The callback funtion that prints and publishes a message in the
    * topic.
@@ -60,6 +65,12 @@ class Talker : public rclcpp::Node {
   void addStrings(
       const std::shared_ptr<pub_sub::srv::AddTwoStrings::Request> request,
       std::shared_ptr<pub_sub::srv::AddTwoStrings::Response> response);
+  /**
+   * @brief This function sets the values for transformation
+   * 
+   */
+  void make_transforms();
+
 };  // Talker
 
 #endif  // PUB_SUB_INCLUDE_PUB_SUB_TALKER_H_

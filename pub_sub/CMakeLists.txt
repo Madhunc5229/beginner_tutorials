@@ -15,6 +15,9 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
 
 set(msg_files
   "msg/String.msg"
@@ -30,7 +33,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 #Talker
 include_directories(include/pub_sub)
 add_executable(publisher app/publisher.cpp src/talker.cpp)
-ament_target_dependencies(publisher rclcpp std_msgs )
+ament_target_dependencies(publisher rclcpp std_msgs geometry_msgs tf2 tf2_ros)
 
 install(TARGETS
 publisher
@@ -57,3 +60,4 @@ install(DIRECTORY
 
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()
+
