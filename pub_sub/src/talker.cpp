@@ -41,8 +41,9 @@ Talker::Talker(const std::string &node_name, std::string topic_name,
 
   tf_static_broadcaster_ = std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
 
+  timer_frame_ = this->create_wall_timer(std::chrono::seconds(2), std::bind(&Talker::make_transforms, this));
     // Publish static transforms once at startup
-  // this->make_transforms();
+
 }
 
 void Talker::timer_callback() {
@@ -50,7 +51,7 @@ void Talker::timer_callback() {
   RCLCPP_INFO(this->get_logger(), "Publishing: '%s' ",
               message_.text.c_str());
   // Publishing the message
-  this->make_transforms();
+  publisher_->publish(message_);
 }
 
 void Talker::addStrings(

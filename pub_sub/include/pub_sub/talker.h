@@ -47,6 +47,8 @@ class Talker : public rclcpp::Node {
   rclcpp::Service<pub_sub::srv::AddTwoStrings>::SharedPtr
       service_;  //!< The pointer to the service.
   pub_sub::msg::String message_;
+  rclcpp::TimerBase::SharedPtr
+      timer_frame_;
 
   std::shared_ptr<tf2_ros::StaticTransformBroadcaster> tf_static_broadcaster_;
 
