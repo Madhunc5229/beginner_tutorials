@@ -34,7 +34,7 @@ colcon build --packages-select pub_sub
 source install/setup.bash
 ```
 ## Launching the package
-- Launch the nodes with interval parameter which is publishing rate for the publisher node and record paramter as true if you want a rosbag recorded file for 15 seconds.
+- Launch the nodes with `interval` parameter which is publishing rate for the publisher node and `record` paramter as true if you want a rosbag recorded file for 15 seconds.
 - The bag files will be saved in results folder
 ```
 ros2 launch pub_sub pub_sub.launch interval:=1 record:=true
