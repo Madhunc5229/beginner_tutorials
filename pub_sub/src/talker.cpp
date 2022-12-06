@@ -26,9 +26,9 @@ Talker::Talker(const std::string &node_name, std::string topic_name,
     RCLCPP_FATAL_STREAM(rclcpp::get_logger("rclcpp"),
                         "Publishing interval is too small!");
   }
-  publisher_ = this->create_publisher<pub_sub::msg::String>(topic_name, 10);
+  publisher_ = this->create_publisher<std_msgs::msg::String>(topic_name, 10);
   timer_ = this->create_wall_timer(std::chrono::seconds(interval),
-                                   std::bind(&Talker::timer_callback, this));
+                                  std::bind(&Talker::timer_callback, this));
   service_ = this->create_service<pub_sub::srv::AddTwoStrings>(
       "add_two_strings",
       std::bind(&Talker::addStrings, this, std::placeholders::_1,
@@ -37,7 +37,7 @@ Talker::Talker(const std::string &node_name, std::string topic_name,
   // Using RCLCPP_INFO_STREAM_ONCE to inform about the message that is set
   RCLCPP_INFO_STREAM_ONCE(rclcpp::get_logger("rclcpp"),
                           "Setting the message");
-  message_.text = "Publishing TF between 'world & 'talk'";
+  message_.data = "Publishing TF between 'world & 'talk'";
 
   tf_static_broadcaster_ = std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
 
@@ -49,7 +49,7 @@ Talker::Talker(const std::string &node_name, std::string topic_name,
 void Talker::timer_callback() {
   // Loggin the message in the terminal
   RCLCPP_INFO(this->get_logger(), "Publishing: '%s' ",
-              message_.text.c_str());
+              message_.data.c_str());
   // Publishing the message
   publisher_->publish(message_);
 }
@@ -70,7 +70,7 @@ void Talker::addStrings(
   RCLCPP_DEBUG_STREAM(rclcpp::get_logger("rclcpp"),
                       "Sending back response: " << response->concatenated);
 
-  message_.text = response->concatenated;
+  message_.data = response->concatenated;
 }
 
 void Talker::make_transforms(){

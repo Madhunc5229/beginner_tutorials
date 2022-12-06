@@ -12,7 +12,7 @@
 
 Listener::Listener(const std::string &node_name, std::string topic_name)
     : Node(node_name) {
-  subscription_ = this->create_subscription<pub_sub::msg::String>(
+  subscription_ = this->create_subscription<std_msgs::msg::String>(
       topic_name, 10,
       std::bind(&Listener::topic_callback, this, std::placeholders::_1));
   if (rcutils_logging_set_logger_level(
@@ -23,6 +23,6 @@ Listener::Listener(const std::string &node_name, std::string topic_name)
     RCLCPP_INFO(this->get_logger(), "Started without DEBUG");
 }
 
-void Listener::topic_callback(const pub_sub::msg::String &msg) const {
-  RCLCPP_INFO_STREAM(this->get_logger(), "I heard: '" << msg.text << "'");
+void Listener::topic_callback(const std_msgs::msg::String &msg) const {
+  RCLCPP_INFO_STREAM(this->get_logger(), "I heard: '" << msg.data << "'");
 }

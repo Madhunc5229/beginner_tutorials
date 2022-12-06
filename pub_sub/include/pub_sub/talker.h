@@ -42,11 +42,11 @@ class Talker : public rclcpp::Node {
  private:
   rclcpp::TimerBase::SharedPtr
       timer_;  //!< The pointer that points to the callback.
-  rclcpp::Publisher<pub_sub::msg::String>::SharedPtr
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr
       publisher_;  //!< The pointer to the publisher topic.
   rclcpp::Service<pub_sub::srv::AddTwoStrings>::SharedPtr
       service_;  //!< The pointer to the service.
-  pub_sub::msg::String message_;
+  std_msgs::msg::String message_;
   rclcpp::TimerBase::SharedPtr
       timer_frame_;
 

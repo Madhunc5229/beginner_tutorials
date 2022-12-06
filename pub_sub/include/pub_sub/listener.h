@@ -40,9 +40,9 @@ class Listener : public rclcpp::Node {
    *
    * @param msg The message that is read from the topic.
    */
-  void topic_callback(const pub_sub::msg::String &msg) const;
+  void topic_callback(const std_msgs::msg::String &msg) const;
 
-  rclcpp::Subscription<pub_sub::msg::String>::SharedPtr
+  rclcpp::Subscription<std_msgs::msg::String>::SharedPtr
       subscription_;  //!< The pointer that subscribes to the topic.
 };                    // Listener
 

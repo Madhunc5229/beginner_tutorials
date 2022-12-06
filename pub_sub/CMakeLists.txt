@@ -58,6 +58,13 @@ install(DIRECTORY
   DESTINATION share/${PROJECT_NAME}/
 )
 
+# Add a gtest executable
+set(TESTFILES
+  test/service_test.cpp)
+ament_add_gtest(${PROJECT_NAME}_test ${TESTFILES})
+ament_target_dependencies(${PROJECT_NAME}_test rclcpp std_msgs geometry_msgs rclcpp tf2_ros tf2)
+# add_dependencies(${PROJECT_NAME}_test publisher)
+target_link_libraries(${PROJECT_NAME}_test "${cpp_typesupport_target}")
+
 ament_export_dependencies(rosidl_default_runtime)
 ament_package()
-
