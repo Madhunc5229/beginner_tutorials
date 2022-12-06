@@ -1,0 +1,156 @@
+rosbag2_bagfile_information:
+  version: 5
+  storage_identifier: sqlite3
+  duration:
+    nanoseconds: 14999973726
+  starting_time:
+    nanoseconds_since_epoch: 1670288176597121239
+  message_count: 900
+  topics_with_message_count:
+    - topic_metadata:
+        name: /tf_static
+        type: tf2_msgs/msg/TFMessage
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+      message_count: 127
+    - topic_metadata:
+        name: /messages
+        type: std_msgs/msg/String
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+      message_count: 255
+    - topic_metadata:
+        name: /parameter_events
+        type: rcl_interfaces/msg/ParameterEvent
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false\n- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false\n- history: 3\n  depth: 0\n  reliability: 1\n  durability: 2\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 9223372036\n    nsec: 854775807\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+      message_count: 0
+    - topic_metadata:
+        name: /rosout
+        type: rcl_interfaces/msg/Log
+        serialization_format: cdr
+        offered_qos_profiles: "- history: 3\n  depth: 0\n  reliability: 1\n  durability: 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 10\n    nsec: 0\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false\n- history: 3\n  depth: 0\n  reliability: 1\n  durability: 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 10\n    nsec: 0\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false\n- history: 3\n  depth: 0\n  reliability: 1\n  durability: 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 10\n    nsec: 0\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false\n- history: 3\n  depth: 0\n  reliability: 1\n  durability: 1\n  deadline:\n    sec: 9223372036\n    nsec: 854775807\n  lifespan:\n    sec: 10\n    nsec: 0\n  liveliness: 1\n  liveliness_lease_duration:\n    sec: 9223372036\n    nsec: 854775807\n  avoid_ros_namespace_conventions: false"
+      message_count: 518
+  compression_format: ""
+  compression_mode: ""
+  relative_file_paths:
+    - ros_bag_file.bag_0.db3
+    - ros_bag_file.bag_1.db3
+    - ros_bag_file.bag_2.db3
+    - ros_bag_file.bag_3.db3
+    - ros_bag_file.bag_4.db3
+    - ros_bag_file.bag_5.db3
+    - ros_bag_file.bag_6.db3
+    - ros_bag_file.bag_7.db3
+    - ros_bag_file.bag_8.db3
+    - ros_bag_file.bag_9.db3
+    - ros_bag_file.bag_10.db3
+    - ros_bag_file.bag_11.db3
+    - ros_bag_file.bag_12.db3
+    - ros_bag_file.bag_13.db3
+    - ros_bag_file.bag_14.db3
+    - ros_bag_file.bag_15.db3
+    - ros_bag_file.bag_16.db3
+  files:
+    - path: ros_bag_file.bag_0.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670287932607938287
+      duration:
+        nanoseconds: 14989483993
+      message_count: 60
+    - path: ros_bag_file.bag_1.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670287948597098046
+      duration:
+        nanoseconds: 14001370791
+      message_count: 53
+    - path: ros_bag_file.bag_2.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670287963597325626
+      duration:
+        nanoseconds: 14000841849
+      message_count: 52
+    - path: ros_bag_file.bag_3.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670287978597344561
+      duration:
+        nanoseconds: 14999904406
+      message_count: 55
+    - path: ros_bag_file.bag_4.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670287993597412349
+      duration:
+        nanoseconds: 14999973726
+      message_count: 51
+    - path: ros_bag_file.bag_5.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288008597515376
+      duration:
+        nanoseconds: 14001330835
+      message_count: 52
+    - path: ros_bag_file.bag_6.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288023597962548
+      duration:
+        nanoseconds: 14999684382
+      message_count: 54
+    - path: ros_bag_file.bag_7.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288038598071221
+      duration:
+        nanoseconds: 14999888515
+      message_count: 54
+    - path: ros_bag_file.bag_8.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288054597966202
+      duration:
+        nanoseconds: 14999829501
+      message_count: 55
+    - path: ros_bag_file.bag_9.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288069598366941
+      duration:
+        nanoseconds: 14999548610
+      message_count: 52
+    - path: ros_bag_file.bag_10.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288084598474129
+      duration:
+        nanoseconds: 14999461540
+      message_count: 53
+    - path: ros_bag_file.bag_11.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288099598606366
+      duration:
+        nanoseconds: 14999392671
+      message_count: 53
+    - path: ros_bag_file.bag_12.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288114598630653
+      duration:
+        nanoseconds: 14999149935
+      message_count: 53
+    - path: ros_bag_file.bag_13.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288130597117630
+      duration:
+        nanoseconds: 14001534081
+      message_count: 53
+    - path: ros_bag_file.bag_14.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288145598052030
+      duration:
+        nanoseconds: 14999405223
+      message_count: 55
+    - path: ros_bag_file.bag_15.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288160598347806
+      duration:
+        nanoseconds: 14999828826
+      message_count: 53
+    - path: ros_bag_file.bag_16.db3
+      starting_time:
+        nanoseconds_since_epoch: 1670288176597121239
+      duration:
+        nanoseconds: 11000262976
+      message_count: 42

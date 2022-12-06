@@ -11,14 +11,16 @@
 
 #ifndef PUB_SUB_INCLUDE_PUB_SUB_TALKER_H_
 #define PUB_SUB_INCLUDE_PUB_SUB_TALKER_H_
-#include <string>
 #include <memory>
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
+#include <string>
 
-
+#include "geometry_msgs/msg/transform_stamped.hpp"
 #include "pub_sub/msg/string.hpp"
 #include "pub_sub/srv/add_two_strings.hpp"
+#include "tf2/LinearMath/Quaternion.h"
+#include "tf2_ros/static_transform_broadcaster.h"
 
 /**
  * @brief this class contains methods & attributes for the publisher
@@ -39,11 +41,14 @@ class Talker : public rclcpp::Node {
  private:
   rclcpp::TimerBase::SharedPtr
       timer_;  //!< The pointer that points to the callback.
-  rclcpp::Publisher<pub_sub::msg::String>::SharedPtr
+  rclcpp::Publisher<std_msgs::msg::String>::SharedPtr
       publisher_;  //!< The pointer to the publisher topic.
   rclcpp::Service<pub_sub::srv::AddTwoStrings>::SharedPtr
       service_;  //!< The pointer to the service.
-  pub_sub::msg::String message_;
+  std_msgs::msg::String message_;
+  rclcpp::TimerBase::SharedPtr timer_frame_;
+
+  std::shared_ptr<tf2_ros::StaticTransformBroadcaster> tf_static_broadcaster_;
 
   /**
    * @brief The callback funtion that prints and publishes a message in the
@@ -60,6 +65,11 @@ class Talker : public rclcpp::Node {
   void addStrings(
       const std::shared_ptr<pub_sub::srv::AddTwoStrings::Request> request,
       std::shared_ptr<pub_sub::srv::AddTwoStrings::Response> response);
+  /**
+   * @brief This function sets the values for transformation
+   *
+   */
+  void make_transforms();
 };  // Talker
 
 #endif  // PUB_SUB_INCLUDE_PUB_SUB_TALKER_H_

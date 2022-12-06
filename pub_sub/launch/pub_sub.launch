@@ -1,4 +1,5 @@
 <launch>
   <node pkg="pub_sub" exec="publisher" name="pub" args="$(var interval)" />
   <node pkg="pub_sub" exec="subscriber" name="sub"/>
+  <executable cmd="ros2 bag record -o src/beginner_tutorials/pub_sub/results/ros_bag_file.bag -a -d 15" output="screen" if="$(var record)"/>
 </launch>
