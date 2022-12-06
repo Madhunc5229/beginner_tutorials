@@ -11,10 +11,9 @@
 
 #ifndef PUB_SUB_INCLUDE_PUB_SUB_LISTENER_H_
 #define PUB_SUB_INCLUDE_PUB_SUB_LISTENER_H_
-#include <string>
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
-
+#include <string>
 
 #include "pub_sub/msg/string.hpp"
 

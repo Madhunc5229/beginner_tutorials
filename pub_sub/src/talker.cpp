@@ -28,28 +28,27 @@ Talker::Talker(const std::string &node_name, std::string topic_name,
   }
   publisher_ = this->create_publisher<std_msgs::msg::String>(topic_name, 10);
   timer_ = this->create_wall_timer(std::chrono::seconds(interval),
-                                  std::bind(&Talker::timer_callback, this));
+                                   std::bind(&Talker::timer_callback, this));
   service_ = this->create_service<pub_sub::srv::AddTwoStrings>(
       "add_two_strings",
       std::bind(&Talker::addStrings, this, std::placeholders::_1,
                 std::placeholders::_2));
 
   // Using RCLCPP_INFO_STREAM_ONCE to inform about the message that is set
-  RCLCPP_INFO_STREAM_ONCE(rclcpp::get_logger("rclcpp"),
-                          "Setting the message");
+  RCLCPP_INFO_STREAM_ONCE(rclcpp::get_logger("rclcpp"), "Setting the message");
   message_.data = "Publishing TF between 'world & 'talk'";
 
-  tf_static_broadcaster_ = std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
+  tf_static_broadcaster_ =
+      std::make_shared<tf2_ros::StaticTransformBroadcaster>(this);
 
-  timer_frame_ = this->create_wall_timer(std::chrono::seconds(2), std::bind(&Talker::make_transforms, this));
-    // Publish static transforms once at startup
-
+  timer_frame_ = this->create_wall_timer(
+      std::chrono::seconds(2), std::bind(&Talker::make_transforms, this));
+  // Publish static transforms once at startup
 }
 
 void Talker::timer_callback() {
   // Loggin the message in the terminal
-  RCLCPP_INFO(this->get_logger(), "Publishing: '%s' ",
-              message_.data.c_str());
+  RCLCPP_INFO(this->get_logger(), "Publishing: '%s' ", message_.data.c_str());
   // Publishing the message
   publisher_->publish(message_);
 }
@@ -73,21 +72,21 @@ void Talker::addStrings(
   message_.data = response->concatenated;
 }
 
-void Talker::make_transforms(){
+void Talker::make_transforms() {
   geometry_msgs::msg::TransformStamped t;
 
-    t.header.stamp = this->get_clock()->now();
-    t.header.frame_id = "world";
-    t.child_frame_id = "talk";
+  t.header.stamp = this->get_clock()->now();
+  t.header.frame_id = "world";
+  t.child_frame_id = "talk";
 
-    t.transform.translation.x = 1.0;
-    t.transform.translation.y = 2.0;
-    t.transform.translation.z = 3.0;
+  t.transform.translation.x = 1.0;
+  t.transform.translation.y = 2.0;
+  t.transform.translation.z = 3.0;
 
-    t.transform.rotation.x = 0.0;
-    t.transform.rotation.y = 0.0;
-    t.transform.rotation.z = 0.0;
-    t.transform.rotation.w = 1.0;
+  t.transform.rotation.x = 0.0;
+  t.transform.rotation.y = 0.0;
+  t.transform.rotation.z = 0.0;
+  t.transform.rotation.w = 1.0;
 
-    tf_static_broadcaster_->sendTransform(t);
+  tf_static_broadcaster_->sendTransform(t);
 }
