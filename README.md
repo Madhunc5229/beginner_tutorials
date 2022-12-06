@@ -42,8 +42,6 @@ ros2 launch pub_sub pub_sub.launch interval:=1 record:=true
 - To play the rosbag file (To better vizuale the bag file, run ONLY the subsciber node and play the bag file and verify that the messages are recieved by subscriber)
 ```
 ros2 run pub_sub subscriber
-```
-```
 ros2 bag play src/beginner_tutorials/pub_sub/results/ros_bag_file.bag 
 ```
 ## Inspecting tf tree
