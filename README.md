@@ -88,4 +88,4 @@ cppcheck --enable=all --std=c++17 pub_sub/app/ pub_sub/include/pub_sub/ pub_sub/
 source install/setup.bash
 ros2 run rqt_console rqt_console
 ```
-<img src="../pub_sub/results/rqt_console/rqt_log_level.png" width="800" alt="Alt text" title="">
+<img src="pub_sub/results/rqt_console/rqt_log_level.png" width="800" alt="Alt text" title="">
