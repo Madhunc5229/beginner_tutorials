@@ -4,7 +4,7 @@
 
 ## Dependencies
 
-- Ubuntu 20.04 LTS
+- Ubuntu 20.04 LTS / 22.04 LTS
 - ROS2 Humble
 - colcon
 - rosdep
